@@ -1,0 +1,4 @@
+/Users/lihaobo/CLionProjects/BatchX/cmake-build-debug/CMakeFiles/dobatch.dir
+/Users/lihaobo/CLionProjects/BatchX/cmake-build-debug/CMakeFiles/test.dir
+/Users/lihaobo/CLionProjects/BatchX/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/lihaobo/CLionProjects/BatchX/cmake-build-debug/CMakeFiles/rebuild_cache.dir

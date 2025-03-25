@@ -1,0 +1,162 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: batch
+# Configurations: Debug
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/lihaobo/CLionProjects/BatchX/cmake-build-debug/
+# =============================================================================
+# Object build statements for EXECUTABLE target dobatch
+
+
+#############################################
+# Order-only phony target for dobatch
+
+build cmake_object_order_depends_target_dobatch: phony || CMakeFiles/dobatch.dir
+
+build CMakeFiles/dobatch.dir/main.cpp.o: CXX_COMPILER__dobatch_Debug /Users/lihaobo/CLionProjects/BatchX/main.cpp || cmake_object_order_depends_target_dobatch
+  DEFINES = -DGFLAGS_IS_A_DLL=0 -DGLOG_CUSTOM_PREFIX_SUPPORT
+  DEP_FILE = CMakeFiles/dobatch.dir/main.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.2 -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/dobatch.dir
+  OBJECT_FILE_DIR = CMakeFiles/dobatch.dir
+
+build CMakeFiles/dobatch.dir/test/test1.cpp.o: CXX_COMPILER__dobatch_Debug /Users/lihaobo/CLionProjects/BatchX/test/test1.cpp || cmake_object_order_depends_target_dobatch
+  DEFINES = -DGFLAGS_IS_A_DLL=0 -DGLOG_CUSTOM_PREFIX_SUPPORT
+  DEP_FILE = CMakeFiles/dobatch.dir/test/test1.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.2 -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/dobatch.dir
+  OBJECT_FILE_DIR = CMakeFiles/dobatch.dir/test
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target dobatch
+
+
+#############################################
+# Link the executable dobatch
+
+build dobatch: CXX_EXECUTABLE_LINKER__dobatch_Debug CMakeFiles/dobatch.dir/main.cpp.o CMakeFiles/dobatch.dir/test/test1.cpp.o | /opt/homebrew/lib/libglog.0.6.0.dylib /opt/homebrew/lib/libgtest.a /opt/homebrew/lib/libarrow.1900.1.0.dylib /opt/homebrew/lib/libbenchmark.a /opt/homebrew/lib/libgflags.2.2.2.dylib
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.2
+  LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  /opt/homebrew/lib/libglog.0.6.0.dylib  /opt/homebrew/lib/libgtest.a  /opt/homebrew/lib/libarrow.1900.1.0.dylib  /opt/homebrew/lib/libbenchmark.a  /opt/homebrew/lib/libgflags.2.2.2.dylib
+  OBJECT_DIR = CMakeFiles/dobatch.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = dobatch
+  TARGET_PDB = dobatch.dbg
+
+
+#############################################
+# Utility command for test
+
+build CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/lihaobo/CLionProjects/BatchX/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test: phony CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/lihaobo/CLionProjects/BatchX/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/lihaobo/CLionProjects/BatchX/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/lihaobo/CLionProjects/BatchX -B/Users/lihaobo/CLionProjects/BatchX/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Target aliases.
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/lihaobo/CLionProjects/BatchX/cmake-build-debug
+
+build all: phony dobatch
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakePushCheckState.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckFunctionExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckSymbolExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindBLAS.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindBZip2.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindGTest.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindLAPACK.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindOpenSSL.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPkgConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindZLIB.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GoogleTest.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/SelectLibraryConfigurations.cmake /Users/lihaobo/CLionProjects/BatchX/CMakeLists.txt /opt/homebrew/lib/cmake/AWSSDK/AWSSDKConfig.cmake /opt/homebrew/lib/cmake/AWSSDK/AWSSDKConfigVersion.cmake /opt/homebrew/lib/cmake/AWSSDK/compiler_settings.cmake /opt/homebrew/lib/cmake/AWSSDK/platformDeps.cmake /opt/homebrew/lib/cmake/AWSSDK/sdksCommon.cmake /opt/homebrew/lib/cmake/Arrow/ArrowConfig.cmake /opt/homebrew/lib/cmake/Arrow/ArrowConfigVersion.cmake /opt/homebrew/lib/cmake/Arrow/ArrowOptions.cmake /opt/homebrew/lib/cmake/Arrow/ArrowTargets-release.cmake /opt/homebrew/lib/cmake/Arrow/ArrowTargets.cmake /opt/homebrew/lib/cmake/Arrow/FindAWSSDKAlt.cmake /opt/homebrew/lib/cmake/Arrow/FindBrotliAlt.cmake /opt/homebrew/lib/cmake/Arrow/FindOpenSSLAlt.cmake /opt/homebrew/lib/cmake/Arrow/FindSnappyAlt.cmake /opt/homebrew/lib/cmake/Arrow/Findlz4Alt.cmake /opt/homebrew/lib/cmake/Arrow/Findre2Alt.cmake /opt/homebrew/lib/cmake/Arrow/Findutf8proc.cmake /opt/homebrew/lib/cmake/Arrow/FindzstdAlt.cmake /opt/homebrew/lib/cmake/GTest/GTestConfig.cmake /opt/homebrew/lib/cmake/GTest/GTestConfigVersion.cmake /opt/homebrew/lib/cmake/GTest/GTestTargets-release.cmake /opt/homebrew/lib/cmake/GTest/GTestTargets.cmake /opt/homebrew/lib/cmake/Snappy/SnappyConfig.cmake /opt/homebrew/lib/cmake/Snappy/SnappyConfigVersion.cmake /opt/homebrew/lib/cmake/Snappy/SnappyTargets-release.cmake /opt/homebrew/lib/cmake/Snappy/SnappyTargets.cmake /opt/homebrew/lib/cmake/absl/abslConfig.cmake /opt/homebrew/lib/cmake/absl/abslConfigVersion.cmake /opt/homebrew/lib/cmake/absl/abslTargets-release.cmake /opt/homebrew/lib/cmake/absl/abslTargets.cmake /opt/homebrew/lib/cmake/aws-c-auth/aws-c-auth-config.cmake /opt/homebrew/lib/cmake/aws-c-auth/shared/aws-c-auth-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-auth/shared/aws-c-auth-targets.cmake /opt/homebrew/lib/cmake/aws-c-cal/aws-c-cal-config.cmake /opt/homebrew/lib/cmake/aws-c-cal/shared/aws-c-cal-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-cal/shared/aws-c-cal-targets.cmake /opt/homebrew/lib/cmake/aws-c-common/aws-c-common-config.cmake /opt/homebrew/lib/cmake/aws-c-common/shared/aws-c-common-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-common/shared/aws-c-common-targets.cmake /opt/homebrew/lib/cmake/aws-c-compression/aws-c-compression-config.cmake /opt/homebrew/lib/cmake/aws-c-compression/shared/aws-c-compression-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-compression/shared/aws-c-compression-targets.cmake /opt/homebrew/lib/cmake/aws-c-event-stream/aws-c-event-stream-config.cmake /opt/homebrew/lib/cmake/aws-c-event-stream/shared/aws-c-event-stream-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-event-stream/shared/aws-c-event-stream-targets.cmake /opt/homebrew/lib/cmake/aws-c-http/aws-c-http-config.cmake /opt/homebrew/lib/cmake/aws-c-http/shared/aws-c-http-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-http/shared/aws-c-http-targets.cmake /opt/homebrew/lib/cmake/aws-c-io/aws-c-io-config.cmake /opt/homebrew/lib/cmake/aws-c-io/shared/aws-c-io-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-io/shared/aws-c-io-targets.cmake /opt/homebrew/lib/cmake/aws-c-mqtt/aws-c-mqtt-config.cmake /opt/homebrew/lib/cmake/aws-c-mqtt/shared/aws-c-mqtt-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-mqtt/shared/aws-c-mqtt-targets.cmake /opt/homebrew/lib/cmake/aws-c-s3/aws-c-s3-config.cmake /opt/homebrew/lib/cmake/aws-c-s3/shared/aws-c-s3-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-s3/shared/aws-c-s3-targets.cmake /opt/homebrew/lib/cmake/aws-c-sdkutils/aws-c-sdkutils-config.cmake /opt/homebrew/lib/cmake/aws-c-sdkutils/shared/aws-c-sdkutils-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-sdkutils/shared/aws-c-sdkutils-targets.cmake /opt/homebrew/lib/cmake/aws-checksums/aws-checksums-config.cmake /opt/homebrew/lib/cmake/aws-checksums/shared/aws-checksums-targets-release.cmake /opt/homebrew/lib/cmake/aws-checksums/shared/aws-checksums-targets.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-cognito-identity/aws-cpp-sdk-cognito-identity-config-version.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-cognito-identity/aws-cpp-sdk-cognito-identity-config.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-cognito-identity/aws-cpp-sdk-cognito-identity-targets-release.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-cognito-identity/aws-cpp-sdk-cognito-identity-targets.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-config/aws-cpp-sdk-config-config-version.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-config/aws-cpp-sdk-config-config.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-config/aws-cpp-sdk-config-targets-release.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-config/aws-cpp-sdk-config-targets.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-config-version.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-config.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-targets-release.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-targets.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-identity-management/aws-cpp-sdk-identity-management-config-version.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-identity-management/aws-cpp-sdk-identity-management-config.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-identity-management/aws-cpp-sdk-identity-management-targets-release.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-identity-management/aws-cpp-sdk-identity-management-targets.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-config-version.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-config.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-targets-release.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-targets.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-sts/aws-cpp-sdk-sts-config-version.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-sts/aws-cpp-sdk-sts-config.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-sts/aws-cpp-sdk-sts-targets-release.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-sts/aws-cpp-sdk-sts-targets.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-transfer/aws-cpp-sdk-transfer-config-version.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-transfer/aws-cpp-sdk-transfer-config.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-transfer/aws-cpp-sdk-transfer-targets-release.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-transfer/aws-cpp-sdk-transfer-targets.cmake /opt/homebrew/lib/cmake/aws-crt-cpp/aws-crt-cpp-config-version.cmake /opt/homebrew/lib/cmake/aws-crt-cpp/aws-crt-cpp-config.cmake /opt/homebrew/lib/cmake/aws-crt-cpp/shared/aws-crt-cpp-targets-release.cmake /opt/homebrew/lib/cmake/aws-crt-cpp/shared/aws-crt-cpp-targets.cmake /opt/homebrew/lib/cmake/benchmark/BenchmarkConfig.cmake /opt/homebrew/lib/cmake/benchmark/BenchmarkConfigVersion.cmake /opt/homebrew/lib/cmake/benchmark/benchmarkTargets-release.cmake /opt/homebrew/lib/cmake/benchmark/benchmarkTargets.cmake /opt/homebrew/lib/cmake/gflags/gflags-config-version.cmake /opt/homebrew/lib/cmake/gflags/gflags-config.cmake /opt/homebrew/lib/cmake/gflags/gflags-nonamespace-targets-release.cmake /opt/homebrew/lib/cmake/gflags/gflags-nonamespace-targets.cmake /opt/homebrew/lib/cmake/glog/glog-config-version.cmake /opt/homebrew/lib/cmake/glog/glog-config.cmake /opt/homebrew/lib/cmake/glog/glog-modules.cmake /opt/homebrew/lib/cmake/glog/glog-targets-release.cmake /opt/homebrew/lib/cmake/glog/glog-targets.cmake /opt/homebrew/lib/cmake/re2/re2Config.cmake /opt/homebrew/lib/cmake/re2/re2ConfigVersion.cmake /opt/homebrew/lib/cmake/re2/re2Targets-release.cmake /opt/homebrew/lib/cmake/re2/re2Targets.cmake /opt/homebrew/lib/cmake/zstd/zstdConfig.cmake /opt/homebrew/lib/cmake/zstd/zstdConfigVersion.cmake /opt/homebrew/lib/cmake/zstd/zstdTargets-release.cmake /opt/homebrew/lib/cmake/zstd/zstdTargets.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakePushCheckState.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckFunctionExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckSymbolExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindBLAS.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindBZip2.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindGTest.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindLAPACK.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindOpenSSL.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPkgConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindZLIB.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GoogleTest.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/SelectLibraryConfigurations.cmake /Users/lihaobo/CLionProjects/BatchX/CMakeLists.txt /opt/homebrew/lib/cmake/AWSSDK/AWSSDKConfig.cmake /opt/homebrew/lib/cmake/AWSSDK/AWSSDKConfigVersion.cmake /opt/homebrew/lib/cmake/AWSSDK/compiler_settings.cmake /opt/homebrew/lib/cmake/AWSSDK/platformDeps.cmake /opt/homebrew/lib/cmake/AWSSDK/sdksCommon.cmake /opt/homebrew/lib/cmake/Arrow/ArrowConfig.cmake /opt/homebrew/lib/cmake/Arrow/ArrowConfigVersion.cmake /opt/homebrew/lib/cmake/Arrow/ArrowOptions.cmake /opt/homebrew/lib/cmake/Arrow/ArrowTargets-release.cmake /opt/homebrew/lib/cmake/Arrow/ArrowTargets.cmake /opt/homebrew/lib/cmake/Arrow/FindAWSSDKAlt.cmake /opt/homebrew/lib/cmake/Arrow/FindBrotliAlt.cmake /opt/homebrew/lib/cmake/Arrow/FindOpenSSLAlt.cmake /opt/homebrew/lib/cmake/Arrow/FindSnappyAlt.cmake /opt/homebrew/lib/cmake/Arrow/Findlz4Alt.cmake /opt/homebrew/lib/cmake/Arrow/Findre2Alt.cmake /opt/homebrew/lib/cmake/Arrow/Findutf8proc.cmake /opt/homebrew/lib/cmake/Arrow/FindzstdAlt.cmake /opt/homebrew/lib/cmake/GTest/GTestConfig.cmake /opt/homebrew/lib/cmake/GTest/GTestConfigVersion.cmake /opt/homebrew/lib/cmake/GTest/GTestTargets-release.cmake /opt/homebrew/lib/cmake/GTest/GTestTargets.cmake /opt/homebrew/lib/cmake/Snappy/SnappyConfig.cmake /opt/homebrew/lib/cmake/Snappy/SnappyConfigVersion.cmake /opt/homebrew/lib/cmake/Snappy/SnappyTargets-release.cmake /opt/homebrew/lib/cmake/Snappy/SnappyTargets.cmake /opt/homebrew/lib/cmake/absl/abslConfig.cmake /opt/homebrew/lib/cmake/absl/abslConfigVersion.cmake /opt/homebrew/lib/cmake/absl/abslTargets-release.cmake /opt/homebrew/lib/cmake/absl/abslTargets.cmake /opt/homebrew/lib/cmake/aws-c-auth/aws-c-auth-config.cmake /opt/homebrew/lib/cmake/aws-c-auth/shared/aws-c-auth-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-auth/shared/aws-c-auth-targets.cmake /opt/homebrew/lib/cmake/aws-c-cal/aws-c-cal-config.cmake /opt/homebrew/lib/cmake/aws-c-cal/shared/aws-c-cal-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-cal/shared/aws-c-cal-targets.cmake /opt/homebrew/lib/cmake/aws-c-common/aws-c-common-config.cmake /opt/homebrew/lib/cmake/aws-c-common/shared/aws-c-common-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-common/shared/aws-c-common-targets.cmake /opt/homebrew/lib/cmake/aws-c-compression/aws-c-compression-config.cmake /opt/homebrew/lib/cmake/aws-c-compression/shared/aws-c-compression-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-compression/shared/aws-c-compression-targets.cmake /opt/homebrew/lib/cmake/aws-c-event-stream/aws-c-event-stream-config.cmake /opt/homebrew/lib/cmake/aws-c-event-stream/shared/aws-c-event-stream-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-event-stream/shared/aws-c-event-stream-targets.cmake /opt/homebrew/lib/cmake/aws-c-http/aws-c-http-config.cmake /opt/homebrew/lib/cmake/aws-c-http/shared/aws-c-http-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-http/shared/aws-c-http-targets.cmake /opt/homebrew/lib/cmake/aws-c-io/aws-c-io-config.cmake /opt/homebrew/lib/cmake/aws-c-io/shared/aws-c-io-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-io/shared/aws-c-io-targets.cmake /opt/homebrew/lib/cmake/aws-c-mqtt/aws-c-mqtt-config.cmake /opt/homebrew/lib/cmake/aws-c-mqtt/shared/aws-c-mqtt-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-mqtt/shared/aws-c-mqtt-targets.cmake /opt/homebrew/lib/cmake/aws-c-s3/aws-c-s3-config.cmake /opt/homebrew/lib/cmake/aws-c-s3/shared/aws-c-s3-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-s3/shared/aws-c-s3-targets.cmake /opt/homebrew/lib/cmake/aws-c-sdkutils/aws-c-sdkutils-config.cmake /opt/homebrew/lib/cmake/aws-c-sdkutils/shared/aws-c-sdkutils-targets-release.cmake /opt/homebrew/lib/cmake/aws-c-sdkutils/shared/aws-c-sdkutils-targets.cmake /opt/homebrew/lib/cmake/aws-checksums/aws-checksums-config.cmake /opt/homebrew/lib/cmake/aws-checksums/shared/aws-checksums-targets-release.cmake /opt/homebrew/lib/cmake/aws-checksums/shared/aws-checksums-targets.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-cognito-identity/aws-cpp-sdk-cognito-identity-config-version.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-cognito-identity/aws-cpp-sdk-cognito-identity-config.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-cognito-identity/aws-cpp-sdk-cognito-identity-targets-release.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-cognito-identity/aws-cpp-sdk-cognito-identity-targets.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-config/aws-cpp-sdk-config-config-version.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-config/aws-cpp-sdk-config-config.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-config/aws-cpp-sdk-config-targets-release.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-config/aws-cpp-sdk-config-targets.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-config-version.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-config.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-targets-release.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-targets.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-identity-management/aws-cpp-sdk-identity-management-config-version.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-identity-management/aws-cpp-sdk-identity-management-config.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-identity-management/aws-cpp-sdk-identity-management-targets-release.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-identity-management/aws-cpp-sdk-identity-management-targets.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-config-version.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-config.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-targets-release.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-targets.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-sts/aws-cpp-sdk-sts-config-version.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-sts/aws-cpp-sdk-sts-config.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-sts/aws-cpp-sdk-sts-targets-release.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-sts/aws-cpp-sdk-sts-targets.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-transfer/aws-cpp-sdk-transfer-config-version.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-transfer/aws-cpp-sdk-transfer-config.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-transfer/aws-cpp-sdk-transfer-targets-release.cmake /opt/homebrew/lib/cmake/aws-cpp-sdk-transfer/aws-cpp-sdk-transfer-targets.cmake /opt/homebrew/lib/cmake/aws-crt-cpp/aws-crt-cpp-config-version.cmake /opt/homebrew/lib/cmake/aws-crt-cpp/aws-crt-cpp-config.cmake /opt/homebrew/lib/cmake/aws-crt-cpp/shared/aws-crt-cpp-targets-release.cmake /opt/homebrew/lib/cmake/aws-crt-cpp/shared/aws-crt-cpp-targets.cmake /opt/homebrew/lib/cmake/benchmark/BenchmarkConfig.cmake /opt/homebrew/lib/cmake/benchmark/BenchmarkConfigVersion.cmake /opt/homebrew/lib/cmake/benchmark/benchmarkTargets-release.cmake /opt/homebrew/lib/cmake/benchmark/benchmarkTargets.cmake /opt/homebrew/lib/cmake/gflags/gflags-config-version.cmake /opt/homebrew/lib/cmake/gflags/gflags-config.cmake /opt/homebrew/lib/cmake/gflags/gflags-nonamespace-targets-release.cmake /opt/homebrew/lib/cmake/gflags/gflags-nonamespace-targets.cmake /opt/homebrew/lib/cmake/glog/glog-config-version.cmake /opt/homebrew/lib/cmake/glog/glog-config.cmake /opt/homebrew/lib/cmake/glog/glog-modules.cmake /opt/homebrew/lib/cmake/glog/glog-targets-release.cmake /opt/homebrew/lib/cmake/glog/glog-targets.cmake /opt/homebrew/lib/cmake/re2/re2Config.cmake /opt/homebrew/lib/cmake/re2/re2ConfigVersion.cmake /opt/homebrew/lib/cmake/re2/re2Targets-release.cmake /opt/homebrew/lib/cmake/re2/re2Targets.cmake /opt/homebrew/lib/cmake/zstd/zstdConfig.cmake /opt/homebrew/lib/cmake/zstd/zstdConfigVersion.cmake /opt/homebrew/lib/cmake/zstd/zstdTargets-release.cmake /opt/homebrew/lib/cmake/zstd/zstdTargets.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all

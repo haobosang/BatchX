@@ -1,0 +1,10 @@
+# ninja log v5
+4	101	1742866188124595868	dobatch	3bacb00ef578dc9e
+3	490	1742865903160729675	CMakeFiles/dobatch.dir/main.cpp.o	a5e2a396d91fdd8d
+6	727	1742865285183400135	CMakeFiles/batch.dir/main.cpp.o	507333a729af0c6b
+3	1045	1742865972637021567	CMakeFiles/dobatch.dir/test/test1.cpp.o	7cc2ee6445af2838
+1	1217	1742866245330767247	build.ninja	e659d854f3a2967a
+0	7	0	clean	3c8e6cc385ee00ba
+6	1287	1742865285742172028	CMakeFiles/batch.dir/test/test1.cpp.o	b8976bf41405c900
+4	467	1742866274997803333	CMakeFiles/dobatch.dir/main.cpp.o	a5e2a396d91fdd8d
+467	503	1742866275034147986	dobatch	3bacb00ef578dc9e

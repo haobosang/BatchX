@@ -1,0 +1,45 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/lihaobo/CLionProjects/BatchX -B /Users/lihaobo/CLionProjects/BatchX/cmake-build-debug
+CMake Warning at /opt/homebrew/lib/cmake/Arrow/Findlz4Alt.cmake:29 (find_package):
+  By not providing "Findlz4.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "lz4", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "lz4" with any of
+  the following names:
+
+    lz4Config.cmake
+    lz4-config.cmake
+
+  Add the installation prefix of "lz4" to CMAKE_PREFIX_PATH or set "lz4_DIR"
+  to a directory containing one of the above files.  If "lz4" provides a
+  separate development package or SDK, be sure it has been installed.
+Call Stack (most recent call first):
+  /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+  /opt/homebrew/lib/cmake/Arrow/ArrowConfig.cmake:99 (find_dependency)
+  /opt/homebrew/lib/cmake/Arrow/ArrowConfig.cmake:122 (arrow_find_dependencies)
+  CMakeLists.txt:24 (find_package)
+
+
+-- Found AWS SDK for C++, Version: 1.11.525, Install Root:/opt/homebrew, Platform Prefix:, Platform Dependent Libraries: pthread;curl
+-- Components specified for AWSSDK: config;s3;transfer;identity-management;sts, application will be depending on libs: aws-cpp-sdk-config;aws-cpp-sdk-transfer;aws-cpp-sdk-identity-management;aws-cpp-sdk-cognito-identity;aws-cpp-sdk-sts;aws-cpp-sdk-s3;aws-cpp-sdk-core
+-- Try finding aws-cpp-sdk-core
+-- Found aws-cpp-sdk-core
+-- Try finding aws-cpp-sdk-s3
+-- Found aws-cpp-sdk-s3
+-- Try finding aws-cpp-sdk-sts
+-- Found aws-cpp-sdk-sts
+-- Try finding aws-cpp-sdk-cognito-identity
+-- Found aws-cpp-sdk-cognito-identity
+-- Try finding aws-cpp-sdk-identity-management
+-- Found aws-cpp-sdk-identity-management
+-- Try finding aws-cpp-sdk-transfer
+-- Found aws-cpp-sdk-transfer
+-- Try finding aws-cpp-sdk-config
+-- Found aws-cpp-sdk-config
+-- Arrow version: 19.0.1
+-- Found the Arrow shared library: /opt/homebrew/lib/libarrow.1900.1.0.dylib
+-- Found the Arrow import library: ARROW_IMPORT_LIB-NOTFOUND
+-- Found the Arrow static library: /opt/homebrew/lib/libarrow.a
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/lihaobo/CLionProjects/BatchX/cmake-build-debug
