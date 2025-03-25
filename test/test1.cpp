@@ -20,15 +20,15 @@ TEST(ArrowTest, ArrayCreation) {
     ASSERT_OK(int_builder.Finish(&int_array));
 
     // 验证数组长度
-    ASSERT_EQ(int_array->length(), 5);
+    EXPECT_EQ(int_array->length(), 5);
 
     // 验证数组类型
     ASSERT_TRUE(int_array->type()->Equals(int64()));
 
     // 验证数组内容 (使用工具函数)
     auto int64_array = std::static_pointer_cast<Int64Array>(int_array);
-    ASSERT_EQ(int64_array->Value(0), 1);
-    ASSERT_EQ(int64_array->Value(4), 5);
+    EXPECT_EQ(int64_array->Value(0), 1);
+    EXPECT_EQ(int64_array->Value(4), 5);
 
 
     // 创建一个 String 数组
@@ -36,12 +36,12 @@ TEST(ArrowTest, ArrayCreation) {
     ASSERT_OK(string_builder.AppendValues({"a", "b", "c", "", "e"}));
     std::shared_ptr<Array> string_array;
     ASSERT_OK(string_builder.Finish(&string_array));
-    ASSERT_EQ(string_array->length(), 5);
+    EXPECT_EQ(string_array->length(), 5);
     ASSERT_TRUE(string_array->type()->Equals(utf8()));
 
     auto str_array = std::static_pointer_cast<StringArray>(string_array);
-    ASSERT_EQ(str_array->GetString(0), "a");
-    ASSERT_EQ(str_array->GetString(3), ""); // 验证空字符串
+    EXPECT_EQ(str_array->GetString(0), "a");
+    EXPECT_EQ(str_array->GetString(3), ""); // 验证空字符串
 
 
 }
@@ -76,8 +76,8 @@ TEST(ArrowTest, Table){
     auto table = arrow::Table::Make(schema, arrays);
 
     // 输出表信息
-    ASSERT_EQ(table->num_rows(),5);
-    ASSERT_EQ(table->num_columns(),2);
+    EXPECT_EQ(table->num_rows(),5);
+    EXPECT_EQ(table->num_columns(),2);
 
 
 }
