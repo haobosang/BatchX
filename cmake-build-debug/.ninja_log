@@ -1,8 +1,11 @@
 # ninja log v5
-1302	1403	1742870918696812352	dobatch	3bacb00ef578dc9e
-3	628	1742869791802529662	CMakeFiles/dobatch.dir/main.cpp.o	a5e2a396d91fdd8d
+1203	1304	1743385525444842769	dobatch	74d0046e06e0095e
+4	1202	1743385525340982998	CMakeFiles/dobatch.dir/test/test_csv.cpp.o	e91738fb1d4ad13f
+1	1217	1743386186972332410	build.ninja	e659d854f3a2967a
+6	1321	1742991264200250667	CMakeFiles/dobatch.dir/test/test1.cpp.o	2448cea19ca1124
 6	727	1742865285183400135	CMakeFiles/batch.dir/main.cpp.o	507333a729af0c6b
-4	1302	1742870918593011731	CMakeFiles/dobatch.dir/test/test1.cpp.o	7cc2ee6445af2838
-1	1217	1742904711806586557	build.ninja	e659d854f3a2967a
+4	977	1743384962315676560	CMakeFiles/dobatch.dir/src/io/reader/csv_reader.cpp.o	8b368331d26ee1cd
+4	600	1743385524741452070	CMakeFiles/dobatch.dir/main.cpp.o	a4996416199074d7
 0	7	0	clean	3c8e6cc385ee00ba
 6	1287	1742865285742172028	CMakeFiles/batch.dir/test/test1.cpp.o	b8976bf41405c900
+7	157	1742991263041492396	CMakeFiles/dobatch.dir/src/io/reader/data_reader_factory.cpp.o	7361446bf9034981

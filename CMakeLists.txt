@@ -55,7 +55,7 @@ set(benckmark_lib /opt/homebrew/lib/libbenchmark.a)
 include_directories(${ARROW_INCLUDE_DIR})
 aux_source_directory(./test DIR_TEST_ARMA)
 
-add_executable(dobatch main.cpp ${DIR_TEST_ARMA} include/io/reader/csv_reader.h include/io/reader/data_reader_factory.h include/io/reader/data_reader.h src/io/reader/csv_reader.cpp src/io/reader/data_reader_factory.cpp)
+add_executable(dobatch main.cpp ${DIR_TEST_ARMA} include/io/reader/csv_reader.h include/io/reader/data_reader_factory.h include/io/reader/data_reader.h src/io/reader/csv_reader.cpp src/io/reader/data_reader_factory.cpp test/test_csv.cpp include/processor/data_processor.h include/processor/processor_factory.h src/processor/processor_factory.cpp)
 target_link_libraries(dobatch ${link_lib} ${ARROW_SHARED_LIB} ${benckmark_lib})
 
 target_include_directories(dobatch PUBLIC ${glog_INCLUDE_DIR})

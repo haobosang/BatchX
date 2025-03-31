@@ -16,7 +16,7 @@
 namespace batchx{
 
 class CSVReader:public FileReader{
-
+public:
     CSVReader() =default;
     ~CSVReader() =default;
 
@@ -24,16 +24,24 @@ class CSVReader:public FileReader{
     bool Initialize(const std::string& config);
 
     // 读取下一批数据，返回 Apache Arrow 的 RecordBatch 用于支持流式读
-    std::shared_ptr<arrow::RecordBatch> ReadNextBatch();
+    std::shared_ptr<arrow::RecordBatch> ReadNextBatch() override;
 
     // 读取整个文件，返回 Apache Arrow 的 Table
-    std::shared_ptr<arrow::Table> ReadAll();
+    std::shared_ptr<arrow::Table> ReadAll() override;
+
+    void PrintTable(const std::shared_ptr<arrow::Table>& table);
 
     // 检查是否还有数据
     bool HasNext() const;
 
     // 关闭读取器
     void Close();
+
+
+private:
+    std::string file_path_;
+    std::shared_ptr<arrow::csv::TableReader> table_reader_;
+    std::shared_ptr<arrow::csv::StreamingReader> stream_reader_;
 };
 
 }
