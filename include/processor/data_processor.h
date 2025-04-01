@@ -18,9 +18,8 @@ namespace batchx {
         virtual ~DataProcessor() = default;
 
         // 核心处理函数：接收 Arrow 表，返回处理后的结果
-        virtual arrow::Result<std::shared_ptr<arrow::Table>>
-        Process(const std::shared_ptr<arrow::Table>& table) = 0;
+        virtual std::shared_ptr<arrow::Table> Process(const std::shared_ptr<arrow::Table>& table) = 0;
     };
 
-} // namespace batch
+} // namespace batchx
 #endif //BATCH_DATA_PROCESSOR_H

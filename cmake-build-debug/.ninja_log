@@ -1,11 +1,15 @@
 # ninja log v5
-1203	1304	1743385525444842769	dobatch	74d0046e06e0095e
-4	1202	1743385525340982998	CMakeFiles/dobatch.dir/test/test_csv.cpp.o	e91738fb1d4ad13f
-1	1217	1743386186972332410	build.ninja	e659d854f3a2967a
-6	1321	1742991264200250667	CMakeFiles/dobatch.dir/test/test1.cpp.o	2448cea19ca1124
+3	597	1743473731201593507	CMakeFiles/dobatch.dir/main.cpp.o	a4996416199074d7
 6	727	1742865285183400135	CMakeFiles/batch.dir/main.cpp.o	507333a729af0c6b
-4	977	1743384962315676560	CMakeFiles/dobatch.dir/src/io/reader/csv_reader.cpp.o	8b368331d26ee1cd
-4	600	1743385524741452070	CMakeFiles/dobatch.dir/main.cpp.o	a4996416199074d7
-0	7	0	clean	3c8e6cc385ee00ba
-6	1287	1742865285742172028	CMakeFiles/batch.dir/test/test1.cpp.o	b8976bf41405c900
 7	157	1742991263041492396	CMakeFiles/dobatch.dir/src/io/reader/data_reader_factory.cpp.o	7361446bf9034981
+7	1123	1743473486528298119	CMakeFiles/dobatch.dir/src/io/reader/csv_reader.cpp.o	8b368331d26ee1cd
+6	1287	1742865285742172028	CMakeFiles/batch.dir/test/test1.cpp.o	b8976bf41405c900
+4	975	1743417945922172209	CMakeFiles/dobatch.dir/src/processor/processor_factory.cpp.o	750c82e85369b50f
+6	1321	1742991264200250667	CMakeFiles/dobatch.dir/test/test1.cpp.o	2448cea19ca1124
+11	1157	1743473411906792520	CMakeFiles/dobatch.dir/src/processor/filter_processor.cpp.o	f5760504fa58af2e
+1	1217	1743475591094882938	build.ninja	e659d854f3a2967a
+0	7	0	clean	3c8e6cc385ee00ba
+3	1139	1743475477640220636	CMakeFiles/dobatch.dir/test/test_csv.cpp.o	e91738fb1d4ad13f
+1125	1162	1743475462123437394	dobatch	34255ed972f2ad79
+3	643	1743475592281628545	CMakeFiles/dobatch.dir/src/io/writer/csv_writer.cpp.o	59f38d3c4bd6f856
+643	743	1743475592380634904	dobatch	acc227c9f5038783

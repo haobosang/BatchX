@@ -42,32 +42,32 @@ namespace batchx{
         // 创建 IOContext
         arrow::io::IOContext io_context(arrow::default_memory_pool());
 
-        auto table_reader_result = arrow::csv::TableReader::Make(
-                io_context,
-                input,
-                read_options,
-                parse_options,
-                convert_options
-        );
-        if (!table_reader_result.ok()) {
-            LOG(ERROR) << "Failed to create CSV TableReader: " << table_reader_result.status().message();
-            return false;
-        }
-        table_reader_ = *table_reader_result;
-
-        // 创建 CSV StreamingReader（用于 ReadNextBatch）
-//        auto stream_reader_result = arrow::csv::StreamingReader::Make(
+//        auto table_reader_result = arrow::csv::TableReader::Make(
 //                io_context,
 //                input,
 //                read_options,
 //                parse_options,
 //                convert_options
 //        );
-//        if (!stream_reader_result.ok()) {
-//            LOG(ERROR) << "Failed to create CSV StreamingReader: " << stream_reader_result.status().message();
+//        if (!table_reader_result.ok()) {
+//            LOG(ERROR) << "Failed to create CSV TableReader: " << table_reader_result.status().message();
 //            return false;
 //        }
-//        stream_reader_ = *stream_reader_result;
+//        table_reader_ = *table_reader_result;
+
+        // 创建 CSV StreamingReader（用于 ReadNextBatch）
+        auto stream_reader_result = arrow::csv::StreamingReader::Make(
+                io_context,
+                input,
+                read_options,
+                parse_options,
+                convert_options
+        );
+        if (!stream_reader_result.ok()) {
+            LOG(ERROR) << "Failed to create CSV StreamingReader: " << stream_reader_result.status().message();
+            return false;
+        }
+        stream_reader_ = *stream_reader_result;
 
         LOG(INFO) << "CSVReader initialized successfully for file: " << file_path_;
         return true;
@@ -149,6 +149,44 @@ namespace batchx{
                     }
                 }
                 // 其他数据类型的处理可以继续添加
+            }
+        }
+    }
+
+
+    void CSVReader::PrintRecordBatch(const std::shared_ptr<arrow::RecordBatch>& batch) {
+        auto schema = batch->schema();
+
+        for (int col_idx = 0; col_idx < batch->num_columns(); ++col_idx) {
+            std::string col_name = schema->field(col_idx)->name();
+            std::shared_ptr<arrow::Array> column = batch->column(col_idx);
+            std::cout << "Column '" << col_name << "' (type: " << column->type()->ToString() << "):" << std::endl;
+
+            for (int64_t row_idx = 0; row_idx < batch->num_rows(); ++row_idx) {
+                if (column->type_id() == arrow::Type::INT32) {
+                    auto int_array = std::static_pointer_cast<arrow::Int32Array>(column);
+                    if (!int_array->IsNull(row_idx)) {
+                        std::cout << "  Row " << row_idx << ": " << int_array->Value(row_idx) << std::endl;
+                    } else {
+                        std::cout << "  Row " << row_idx << ": NULL" << std::endl;
+                    }
+                }else if (column->type_id() == arrow::Type::INT64) {
+                    auto int_array = std::static_pointer_cast<arrow::Int64Array>(column);
+                    if (!int_array->IsNull(row_idx)) {
+                        std::cout << "  Row " << row_idx << ": " << int_array->Value(row_idx) << std::endl;
+                    } else {
+                        std::cout << "  Row " << row_idx << ": NULL" << std::endl;
+                    }
+                } else if (column->type_id() == arrow::Type::STRING) {
+                    auto str_array = std::static_pointer_cast<arrow::StringArray>(column);
+                    if (!str_array->IsNull(row_idx)) {
+                        std::cout << "  Row " << row_idx << ": " << str_array->GetString(row_idx) << std::endl;
+                    } else {
+                        std::cout << "  Row " << row_idx << ": NULL" << std::endl;
+                    }
+                } else {
+                    std::cout << "  Row " << row_idx << ": [类型暂不支持打印]" << std::endl;
+                }
             }
         }
     }

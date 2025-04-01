@@ -31,6 +31,8 @@ public:
 
     void PrintTable(const std::shared_ptr<arrow::Table>& table);
 
+    void PrintRecordBatch(const std::shared_ptr<arrow::RecordBatch>& batch);
+
     // 检查是否还有数据
     bool HasNext() const;
 
